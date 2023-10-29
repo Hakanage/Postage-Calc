@@ -54,6 +54,13 @@ p {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.2;
 }
+
+.TitleGrams {
+  color: #C5C6C7;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+}
+
 .Button1 {
     margin-left: 210px;
     height: 100%;
@@ -196,13 +203,8 @@ p {
   
   #Weight{
     width:100px;
-    display: inline;
   }
 
   #Country{
     width:100px;
-  }
-
-  .WeightUnit{
-    display: inline;
   }
