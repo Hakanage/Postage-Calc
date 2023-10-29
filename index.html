@@ -42,7 +42,7 @@
           <a href="#contact">Search</a>
         </div>
     </nav>
-    <form  role="form">
+    <form role="form" onsubmit="getPostageInfo(); return false;">
         <label for="Insurance" class="Title">Insurance Amount:</label>
         <select id="Insurance" name="Insurance" required>
           <option value="RoyalMail">under £250</option>
@@ -60,8 +60,10 @@
         <input type="number" id="Weight" name="Weight" required min="0.1" step="0.1">
         <label for="WeightUnit" class="TitleKg">kg</label><br>
         <input type="submit" button class="button-13" role="button"></button>
-        <input type="reset" button class="button-14" role="button"></button><br>
-        <label for="Result">Use the following options:</label>
+        <input type="reset" button class="button-14" role="button"></button><br><br>
+        <label for="Result" class="Title">Use the following options:</label>
+        <output class="Title" name="DeliveryCompany" for="Insurance"></output>
+        <output class="Title" name="CountryZone" for="Insurance Country"></output>
       </form>
     <script src="main.js"></script>
   </body>
