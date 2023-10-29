@@ -189,3 +189,20 @@ p {
     float: right;
     padding-right: 8px;
   }
+
+  #Insurance{
+    width:100px;
+  }
+  
+  #Weight{
+    width:100px;
+    display: inline;
+  }
+
+  #Country{
+    width:100px;
+  }
+
+  .WeightUnit{
+    display: inline;
+  }

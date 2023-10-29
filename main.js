@@ -32,3 +32,57 @@ $("#test").on("submit", function(e){
          }
      })
  }
+
+ var Insurance = []
+ Insurance["under £250"] = 1;
+ Insurance["over £250"] = 2;
+
+ var Country = []
+ Country["UK"] = 1;
+ Country["USA"] = 2;
+ Country["France"] = 3;
+ Country["Germany"] = 4;
+ Country["Australia"] = 5;
+
+ function getInsuranceAmt() {
+    var InsuranceAmt = 0;
+    var theForm = document.forms["postageform"];
+    var Insurance = theForm.elements["Insurance"];
+    for (var i = 0; i < Insurance.length; i++) {
+      if (Insurance[i].checked) {
+        InsuranceAmt = person[Insurance[i].value];
+      }
+    }
+    return InsuranceAmt;
+  }
+  
+  function getDestinationCountry() {
+    var DestinationCountry = 0;
+    var theForm = document.forms["postageform"];
+    var selectedCountry = theForm.elements["Country"];
+    DestinationCountry = elec[selectedCountry.value];
+    return DestinationCountry;
+  }
+
+  function calculatePostageInfo() {
+    var totalco = getInsuranceAmt() * getDestinationCountry() + waste() + recyclealu() + recycleplas();
+  
+    //display the result
+    document.getElementById('totalConsumption').innerHTML = +totalco.toFixed(2);
+  }
+  
+  //add a function to hide the result on page loading at the start
+  function hidePostageInfo() {
+    document.getElementById('totalConsumption').innerHTML = "0";
+  }
+
+  function validateall() {
+    var error = document.getElementById("error")
+    if (!getDestinationCountry()) {
+      // Changing content and color of content
+      error.textContent = "Destination must be selected"
+      error.style.color = "red"
+      return false;
+    }
+    return true;
+  }

@@ -7,7 +7,7 @@
     <!-- <header class="page-header header container-fluid"> -->
     </header>
   </head>
-  <body>
+  <body onload='hidePostageInfo()'>
     <h1>Postage Calculator</h1>
     <!-- <nav class="navbar navbar-expand-md">
         <a class="navbar-brand" href="#">Logo</a>
@@ -42,7 +42,7 @@
           <a href="#contact">Search</a>
         </div>
     </nav>
-    <form>
+    <form  role="form" id="postageform" onsubmit="calculatePostageInfo();return false;">
         <label for="Insurance" class="Title">Insurance Amount:</label>
         <select id="Insurance" name="Insurance" required>
           <option value="RoyalMail">under £250</option>
@@ -54,10 +54,11 @@
           <option value="USA">USA</option>
           <option value="France">France</option>
           <option value="Germany">Germany</option>
-          <option value="Russia">Russia</option>
+          <option value="Russia">Australia</option>
         </select><br>
         <label for="Weight" class="Title">Weight:</label>
-        <input type="number" id="Weight" name="Weight" required min="0.1" step="0.1"><br>
+        <input type="number" id="Weight" name="Weight" required min="0.1" step="0.1">
+        <label for="WeightUnit" class="Title">grams</label><br>
         <input type="submit" button class="button-13" role="button"></button>
         <input type="reset" button class="button-14" role="button"></button>
       </form>
