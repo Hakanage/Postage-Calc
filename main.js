@@ -19,5 +19,19 @@ function getCountryZone(isInsuranceUnder250, country)
 
 function getPostageInfo()
 {
-    document.getElementsByName("DeliveryCompany").textContent(document.getElementsByName("Insurance").value);
+    var DeliveryCompany = document.getElementById("Insurance").value;
+    document.getElementById("DeliveryCompanyResult").innerHTML = DeliveryCompany;
+    
+    var Country = document.getElementById("Country").value;
+    var CountryZone;
+    if(DeliveryCompany == "RoyalMail")
+    {
+        CountryZone = RoyalMailZones[Country];
+    }
+    else
+    {
+        CountryZone = ParcelForceZones[Country];
+    }
+
+    document.getElementById("CountryZoneResult").innerHTML = CountryZone;
 }
